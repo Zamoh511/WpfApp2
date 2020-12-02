@@ -1,0 +1,28 @@
+﻿<Window xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"  x:Class="WpfApp2.MainWindow"
+        mc:Ignorable="d"
+        xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <dxg:GridControl  x:Name="Grid1" ItemsSource="{Binding library_Suppliers}"  EnableSmartColumnsGeneration="True"  AutoGenerateColumns="AddNew" VerticalAlignment="Top" SelectionMode="MultipleRow">
+            <dxg:GridControl.View>
+                <dxg:TableView/>
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+
+
+
+        <dx:DropDownButton Name="ddBtn" Content="DropDownButton" HorizontalAlignment="Left" Margin="7,135,0,0" VerticalAlignment="Top" Width="75"/>
+        <ComboBox Name="Cmb1" HorizontalAlignment="Left" Margin="7,108,0,0" VerticalAlignment="Top" Width="120">
+            
+        </ComboBox>
+        <WindowsFormsHost>
+        <rv:ReportViewer x:Name="_reportViewer"/>
+        </WindowsFormsHost>
+    </Grid>
+</Window>

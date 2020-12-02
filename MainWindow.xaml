@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp2"
         xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"  x:Class="WpfApp2.MainWindow"
         mc:Ignorable="d"
-        xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"
+       
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <dxg:GridControl  x:Name="Grid1" ItemsSource="{Binding library_Suppliers}"  EnableSmartColumnsGeneration="True"  AutoGenerateColumns="AddNew" VerticalAlignment="Top" SelectionMode="MultipleRow">
@@ -19,10 +19,10 @@
 
         <dx:DropDownButton Name="ddBtn" Content="DropDownButton" HorizontalAlignment="Left" Margin="7,135,0,0" VerticalAlignment="Top" Width="75"/>
         <ComboBox Name="Cmb1" HorizontalAlignment="Left" Margin="7,108,0,0" VerticalAlignment="Top" Width="120">
-            
+
         </ComboBox>
-        <WindowsFormsHost>
-        <rv:ReportViewer x:Name="_reportViewer"/>
-        </WindowsFormsHost>
+
+        <Button x:Name="BtnPrint" Content="Print Report" Click="BtnPrint_Click" Margin="7,176,685,203" />
+
     </Grid>
 </Window>

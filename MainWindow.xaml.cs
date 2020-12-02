@@ -1,4 +1,7 @@
-﻿using DevExpress.Xpo;
+﻿
+using DevExpress.DataProcessing;
+using DevExpress.Xpf.Printing;
+using DevExpress.Xpo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,8 +59,21 @@ namespace WpfApp2
             }
          }
 
+        private void BtnPrint_Click(object sender, RoutedEventArgs e)
+        {
+            int val = 1002;
+            string filter = "ID=" + val.ToString();
 
+            XtraReport12 report = new XtraReport12();
+            //report.Parameters["IdParameter"].Value = 1002;
+            //report.Parameters[0].Visible = false;
+            report.Parameters["IdParameter"].Value = Convert.ToInt32("1002");
 
+            //report.FilterString =filter;
+
+            PrintHelper.ShowRibbonPrintPreviewDialog(this, report);
+
+        }
     }
 }
 

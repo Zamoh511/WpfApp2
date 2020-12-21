@@ -1,0 +1,58 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:RapidCMV1_Master="clr-namespace:RapidCMv1.Module.BusinessObjects.RapidCMV1_Master;assembly=RapidCMv1.Module" xmlns:Xpo="clr-namespace:DevExpress.Xpo;assembly=DevExpress.Xpo.v18.1" xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" x:Class="WpfApp2.ListWindow"
+        mc:Ignorable="d"
+        xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+        xmlns:dxwuin="http://schemas.devexpress.com/winfx/2008/xaml/windowsui/navigation"
+        Title="ListWindow" Height="600" Width="800">
+
+    <Grid Background="BlueViolet">
+
+        <!--Source="Images/System.png"-->
+    
+        <dxlc:TileLayoutControl Background="{x:Null}" Name="tileLayoutControl1">
+            
+            <dxlc:Tile Header="Recieves View" Name="tile1" Click="tile1_Click" >
+                <Image Name="image1" Stretch="None"  />
+            
+            </dxlc:Tile>
+            <dxlc:Tile Header="Recieves Grid" Name="tile2" Size="Small" Click="tile2_Click" Background="#FFC14AAF">
+            <Image Name="image2" Stretch="None"  />
+        </dxlc:Tile>
+            <dxlc:Tile Header="Reports" Name="tile3" Size="Small" Click="tile3_Click" Background="#FF5CA332">
+            <Image Name="image3" Stretch="None"  />
+        </dxlc:Tile>
+        <dxlc:Tile Header="Rates" Name="tile4" Size="Large" dxlc:FlowLayoutControl.IsFlowBreak="True"
+                       HorizontalHeaderAlignment="Center">
+            <Image Name="image4" Stretch="None"  />
+        </dxlc:Tile>
+        <dxlc:Tile Name="tile5" Size="Large"                       
+                       HorizontalHeaderAlignment="Center" Background="#FF666666"
+                       ContentSource="{Binding Agents}" ContentChangeInterval="00:00:03" AnimateContentChange="True">  
+            <dxlc:Tile.ContentTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <TextBlock Text="{Binding AgentName}" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+                        <Image Source="{Binding PhotoSource}" Stretch="None" HorizontalAlignment="Right" VerticalAlignment="Top" />
+                    </Grid>
+                </DataTemplate>
+            </dxlc:Tile.ContentTemplate>
+        </dxlc:Tile>
+        </dxlc:TileLayoutControl>
+        <!--<lc:TileLayoutControl>
+            <lc:Tile Size="Small" dxwuin:Navigation.NavigateTo="View1">
+                <TextBlock Text="View 1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </lc:Tile>
+            <lc:Tile Size="Small" dxwuin:Navigation.NavigateTo="View2">
+                <TextBlock Text="View 2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </lc:Tile>
+            <lc:Tile Size="Small" dxwuin:Navigation.NavigateTo="View3">
+                <TextBlock Text="View 3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </lc:Tile>
+        </lc:TileLayoutControl>-->
+    </Grid>
+</Window>

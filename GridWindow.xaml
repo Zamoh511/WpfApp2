@@ -1,0 +1,47 @@
+﻿<Window x:Class="WpfApp2.GridWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="GridWindow" Height="600" Width="800">
+    <Grid>
+
+        <StackPanel>
+
+            
+                <Button></Button>
+            
+
+            
+            <DataGrid x:Name="dataGrid1" 
+                        Height="800" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"
+                        AutoGenerateColumns="True" >
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="Hyperlink"  Content="Print Tickect" ContentTemplate="{Binding ID}" Click="Click_Edit"></Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <!--<DataGridTextColumn Header="OrderNo"
+                                             Binding="{Binding OrderNo}"/>
+                    <DataGridTextColumn Header="ArrivalDate"
+                                             Binding="{Binding ArrivalDate}"/>
+
+                    <DataGridTextColumn Header="WbTicket"
+                                             Binding="{Binding WbTicket}"/>
+                    <DataGridTextColumn Header="TruckReg"
+                                             Binding="{Binding TruckReg}"/>
+                    <DataGridTextColumn Header="OrderNo"
+                                             Binding="{Binding RecOrderID.OrderNo}"/>-->
+
+                </DataGrid.Columns>
+            
+            </DataGrid>
+            
+        </StackPanel>
+    </Grid>
+</Window>

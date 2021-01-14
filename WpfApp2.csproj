@@ -618,7 +618,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RapidCM_Master\RapidCMv1.Module\RapidCMv1.Module.csproj">
+    <ProjectReference Include="..\RapidCMv1.Module\RapidCMv1.Module.csproj">
       <Project>{5f15837d-d1e5-44dc-92f0-4f2ebe9c3f8d}</Project>
       <Name>RapidCMv1.Module</Name>
     </ProjectReference>
